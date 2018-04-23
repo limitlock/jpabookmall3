@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+
+    <persistence-unit name="jpabookmall3">
+
+        <properties>
+
+            <!-- 필수 속성 -->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="jpadb"/>
+            <property name="javax.persistence.jdbc.password" value="jpadb"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpadb"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+
+            <!-- 옵션 -->
+            <property name="hibernate.show_sql" value="true" /><!-- 콘솔 창에 실행되는 sql문을 표시 -->
+            <property name="hibernate.format_sql" value="true" /><!-- 콘솔 창에 출력되는 sql문을 보기 좋게 포맷 -->
+            <property name="hibernate.use_sql_comments" value="true" />
+            <property name="hibernate.id.new_generator_mappings" value="true" />
+
+            <!-- property name="hibernate.hbm2ddl.auto" value="create" / -->
+      		<!--property name="hibernate.hbm2ddl.auto" value="create-drop" /Entity manager가 종료될때 테이블도 drop--> 
+            <!--property name="hibernate.hbm2ddl.auto" value="update" /-->
+            
+            
+            <!-- domain을 읽어서 새로운 테이블(기존의 것은 drop)을 만들어낸다. -->
+            <!-- 보통 실무에서는 직접 테이블을 만들고, 위와 같은 방법은 사용하지 않는다. why? 실수로 db를 날려버릴 수 있기 때문에...-->
+        </properties>
+        
+    </persistence-unit>
+
+</persistence>
